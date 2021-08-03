@@ -1,0 +1,79 @@
+<div class="pcoded-content">
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">BRS SISTEM</h5>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a [routerLink]="['/admin']">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a [routerLink]="['/admin/agency']">Agency</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                    </div>
+                    <div class="card-body ">
+                        <div class="text-center">
+                            <img class="img-radius img-fluid wid-150" src="assets/images/user/avatar_1.png" alt="User image">
+                            <h3 class="mb-1 mt-3 f-w-400">{{ content.name }}</h3>
+                            <p class="mb-3 text-muted">{{ content.code }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <h5 class="mb-0">Agency details</h5>
+                        <button type="button" class="btn btn-primary btn-sm rounded m-0 float-right" data-toggle="collapse" data-target=".pro-det-edit" aria-expanded="false" aria-controls="pro-det-edit-1 pro-det-edit-2">
+                       edit
+                        </button>
+                    </div>
+                    <div class="card-body border-top pro-det-edit collapse show" id="pro-det-edit-1">
+                        <form>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label font-weight-bolder">Agency Name</label>
+                                <div class="col-sm-9">
+                                    {{ content.name }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label font-weight-bolder">Agency Details</label>
+                                <div class="col-sm-9">
+                                    {{ content.details }}
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body border-top pro-det-edit collapse " id="pro-det-edit-2">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label font-weight-bolder">Agency Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="Agency Name" [(ngModel)]="_editModel.name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label font-weight-bolder">Agency Details</label>
+                            <div class="col-sm-9">
+                                <textarea type="text" class="form-control" placeholder="Agency Details" [(ngModel)]="_editModel.details"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label"></label>
+                            <div class="col-sm-9">
+                                <button type="submit" (click)="submitEdit()" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

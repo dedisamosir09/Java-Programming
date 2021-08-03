@@ -1,0 +1,99 @@
+<div class="pcoded-content">
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Profile</h5>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#!">Dahsboard</a></li>
+                            <li class="breadcrumb-item"><a href="#!">profile</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body ">
+                        <div class="text-center">
+                            <img class="img-radius img-fluid wid-150" src="assets/images/user/avatar_1.png" alt="User image">
+                            <h3 class="mb-1 mt-3 f-w-400">{{ content.firstName }} {{content.lastName}}</h3>
+                            <p class="mb-3 text-muted">agency Admin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Data Detail</h5>
+                        <span class="d-block m-t-5">enter details</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" class="form-control" [(ngModel)]="updtData.firstName" placeholder="firstName">
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" class="form-control" [(ngModel)]="updtData.lastName" placeholder="lastName">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" class="form-control" [(ngModel)]="updtData.mobileNumber" placeholder="mobileNumber">
+                                </div>
+                                <button type="submit" (click)="submitData()" class="btn btn-primary">Update profil</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Upadate Password</h5>
+                        <span class="d-block m-t-5">update your password</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Username</label>
+                                    <input type="text" class="form-control" [(ngModel)]="updtPassword.username" placeholder="username" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" minlength="6" required="true" class="form-control" [(ngModel)]="updtPassword.password" placeholder="password">
+                                    <small id="passwordHelpBlock" class="form-text text-muted">Your password must be 6-20 characters long, </small>
+                                </div>
+                                <button type="submit" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary">change password</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="exampleModalCenter" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Update Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>anda ingin mengupdate password anda?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn  btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" (click)="updatePassword()" class="btn  btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
